@@ -10,10 +10,11 @@ server.use(bodyParser.urlencoded({extended: true}));
 var db = new sqlite3.Database(':memory:');
 db.serialize(function() {
   db.run("CREATE TABLE user (username TEXT, password TEXT, name TEXT)");
-  db.run("INSERT INTO user VALUES ('admin', 'admin123', 'App Administrator')");
   db.run("INSERT INTO user VALUES ('user1', 'cool58', 'Normal user')");
   db.run("INSERT INTO user VALUES ('user2', 'test123', 'Normal user')");
-});
+  db.run("INSERT INTO user VALUES ('admin', 'admin123', 'App Administrator')");
+  db.run("INSERT INTO user VALUES ('user3', 'MyTes$t', 'Normal user')");
+ });
 // }
 
 server.get('/', function(req, res) {
