@@ -39,9 +39,7 @@ server.post('/login', function (req, res) {
     } else if (!row) {
       res.redirect("/index.html#unauthorized");
     } else {
-      res.send('Bonjour, <b>' + row.username + '</b> Vous êtes connecté en tant que <b>' + row.name + '<br /><br />');
-      res.send('Bonjour, <b>' + row.name + '</b><br /><a href="/index.html">Retour à la page d\'accueil</a>');
-    }
+      res.send('Bonjour, <b>' + row.username + '</b> Vous êtes connecté en tant que <b>' + row.name + '<br /><br /><br /><a href="/index.html">Retour à la page d\'accueil</a>');
   });
 
 });
