@@ -8,5 +8,5 @@ Cette page contient une simulation de page d'accès à une application web pour 
 
 # SQL injection Demo
 
-@[Executer l'applicaton]({ "stubs": ["server.js", "index.html", "style.css"], "command": "node server.js" })
+@[Executer l'applicaton]({ "stubs": ["index.html", "style.css"], "command": "node server.js" })
 
