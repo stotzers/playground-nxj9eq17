@@ -6,7 +6,7 @@ Mais si, comme dans cet exemple, le système est mal protégé, il est alors pos
 Cette page contient une simulation de page d'accès à une application web pour exercer l'injection de code SQL. D'une manière général, il n'est pas légal de tenter d'accéder à un système en y injectant du code SQL !
 
 
-# SQL injection Demo
+# SQL Injection Demo
 
 @[Executer l'applicaton]({ "stubs": ["index.html", "style.css","server.js"], "command": "node server.js" })
 
