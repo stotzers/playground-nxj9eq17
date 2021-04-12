@@ -1,27 +1,11 @@
-# Hi,
+# SQL Injection,
 
-Dieses Beispiel soll euch demonstrieren wie es zu einer SQL Injection kommen kann.
+Cette page contient une simulation de page d'accès à une application web.
 
-Der Datenbank wurde ein Admin User hinzugefügt:
-
-```
-username: admin
-password: admin123
-``` 
-
-Normalerweise sollte es nur möglich sein sich mit diesem Zugang einzuwählen.
-Dennoch kann man sich bei unvorsichtiger Programmierweise auf andere Arten Zugang verschaffen.
-
-Solltet ihr genug mit dieser kleinen App gespielt haben probiert diese Zungangsdaten aus:
-
-```
-username: admin
-password: unknown' or '1'='1
-``` 
+Normalement, on ne devrait pouvoir accéder à cette application que si on possède le bon login et le mot de passe correspondant. 
+Mais si le système est mal protégé, il est possible d'y accéder en procédant à de l'injection de code SQL.
 
 # Hands-on Demo
 
-@[Beispiel APP]({ "stubs": ["server.js", "index.html", "style.css"], "command": "node server.js" })
-
-
+@[Executer l'applicaton]({ "stubs": ["server.js", "index.html", "style.css"], "command": "node server.js" })
 
