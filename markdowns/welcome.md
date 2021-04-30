@@ -3,6 +3,9 @@
 Normalement, on ne devrait pouvoir accéder à une application que si on possède le bon login et le mot de passe correspondant. 
 Mais si, comme dans cet exemple, le système est mal protégé, il est alors possible d'y accéder en y injectant du code SQL.
 
+## Avertissement
+Cette page contient une simulation de page d'accès à une application web qui a été créée dans le but d'exercer l'injection de code SQL. Mais attention: d'une manière général, il n'est pas légal de tenter d'accéder à un système en y injectant du code SQL !
+
 ## Exercices
 Pressez sur RUN ci-dessous afin d'afficher l'écran de connexion. 
 Le cadre "Standard Output" en-dessous contient le log du système qui pourrait vous être utile
@@ -13,11 +16,7 @@ Le cadre "Standard Output" en-dessous contient le log du système qui pourrait v
 4)	Déterminer le mot de passe de l’utilisateur dont le login est ‘Roger’ avec la méthode des LIKE. Pour ceci, sachez que ce mot de passe contient entre 2 et 5 lettres choisie parmi les 3 premières lettres de l’alphabet : a, b et c.
 
 
-## Avertissement
-Cette page contient une simulation de page d'accès à une application web qui a été créée dans le but d'exercer l'injection de code SQL. Mais attention: d'une manière général, il n'est pas légal de tenter d'accéder à un système en y injectant du code SQL !
-
-
-# SQL Injection Démo
+# Appuyer sur RUN pour afficher l'écran de connexion
 
 @[Executer l'applicaton]({ "command": "node server.js" })
 
