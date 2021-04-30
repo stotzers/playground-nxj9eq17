@@ -9,7 +9,7 @@ server.use(bodyParser.urlencoded({extended: true}));
 
 var db = new sqlite3.Database(':memory:');
 db.serialize(function() {
-  db.run("CREATE TABLE user (username TEXT, password TEXT, status TEXT)");
+  db.run("CREATE TABLE user (username TEXT, password TEXT, role TEXT)");
   db.run("INSERT INTO user VALUES ('Bruno', 'cool58', 'Normal user')");
   db.run("INSERT INTO user VALUES ('Sophie', 'test123', 'Normal user')");
   db.run("INSERT INTO user VALUES ('admin', 'admin123', 'App Administrator')");
@@ -25,7 +25,7 @@ server.get('/', function(req, res) {
 server.post('/login', function (req, res) {
   var username = req.body.username;
   var password = req.body.password;
-  var query = "SELECT username, status FROM user where username = '" + username + "' and password = '" + password + "'";
+  var query = "SELECT username, role FROM user where username = '" + username + "' and password = '" + password + "'";
 
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
@@ -39,7 +39,9 @@ server.post('/login', function (req, res) {
     } else if (!row) {
       res.redirect("/index.html#unauthorized");
     } else {
-      res.send('Bonjour, <b>' + row.username + '</b> Vous êtes connecté en tant que <b>' + row.status + '<br /><br /><br /><a href="/index.html">Retour à la page d\'accueil</a>');
+      res.send('Bonjour, <b>' + row.username + '</b> Vous êtes connecté en tant que <b>' + row.role + '<br /><br /><br /><a href="/index.html">Retour à la page d\'accueil</a>');
+      if (row.role='App Administrator')
+        res.send('Vous avez les pleins pouvoirs sur cette base de données !');
     }
   });
 
