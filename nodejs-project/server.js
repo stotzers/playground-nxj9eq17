@@ -40,7 +40,7 @@ server.post('/login', function (req, res) {
       res.redirect("/index.html#unauthorized");
     } else {
       if (row.role=='App Administrator') {
-        res.send('Bonjour, <b>' + row.username + '</b> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><a href="/index.html">Retour à la page d\'accueil</a>');
+        res.send('Bonjour, <b>' + row.username + '</b> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Retour à la page d\'accueil</a>');
       }
       else {
         res.send('Bonjour, <b>' + row.username + '</b> Vous êtes connecté en tant que <b>' + row.role + '<br /><br /><br /><a href="/index.html">Retour à la page d\'accueil</a>');
