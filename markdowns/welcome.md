@@ -4,6 +4,8 @@ Normalement, on ne devrait pouvoir accéder à une application que si on possèd
 Mais si, comme dans cet exemple, le système est mal protégé, il est alors possible d'y accéder en y injectant du code SQL.
 
 ## Exercices
+Pressez sur RUN ci-dessous afin d'afficher l'écran de connexion. 
+Le cadre "Standard Output" en-dessous contient le log du système qui pourrait vous être utile
 1)	Essayer de déterminer un nom d’utilisateur de cette base de données.
 2)	Déterminer un utilisateur qui soit un administrateur du système, c’est-à-dire qui ait tous les droits sur la base de données.
     Les administrateurs ont habituellement un nom du type ‘administrateur’, ‘administrator’, ‘admin’, ‘superuser’,…
