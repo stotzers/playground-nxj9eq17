@@ -15,7 +15,7 @@ Le cadre "Standard Output" en-dessous contient le log du système qui pourrait v
 
     Indice: Les administrateurs ont habituellement un nom du type ‘administrateur’, ‘administrator’, ‘admin’, ‘superuser’,…
 3)	Connectez-vous au système en tant qu’administrateur.
-4)	Déterminer le mot de passe de l’utilisateur dont le login est ‘Roger’ avec la méthode des LIKE.
+4)	Déterminer le mot de passe de l’utilisateur dont le login est ‘Roger’ avec la méthode par tâtonnement avec LIKE.
 
     Indice: sachez que ce mot de passe contient entre 2 et 5 lettres choisies parmi les 3 premières lettres de l’alphabet écrites en minuscule : a, b et c.
 
