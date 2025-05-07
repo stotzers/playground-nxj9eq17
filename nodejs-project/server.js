@@ -31,9 +31,8 @@ server.post('/login', function (req, res) {
   console.log('Requête à la base de données: ' + query);
 //  res.send('<script>logMessage("[INFO] Requête à la base de données: " + query);</script>
   server.on('connection', socket => {socket.send("Modifie le texte !");});
-});
 
-db.get(query, function(err, row) {
+  db.get(query, function(err, row) {
     if(err) {
       console.log('ERREUR', err);
       res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
