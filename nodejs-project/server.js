@@ -10,10 +10,10 @@ var db = new sqlite3.Database(':memory:');
 db.serialize(function() {
   db.run("CREATE TABLE user (username TEXT, password TEXT, role TEXT)");
   db.run("INSERT INTO user VALUES ('abel', 'MySecretP@ssWord', 'Normal user')");
-  db.run("INSERT INTO user VALUES ('Bruno', 'cool58', 'Normal user')");
-  db.run("INSERT INTO user VALUES ('Sophie', 'test123', 'Normal user')");
+  db.run("INSERT INTO user VALUES ('bruno', 'cool58', 'Normal user')");
+  db.run("INSERT INTO user VALUES ('sophie', 'test123', 'Normal user')");
   db.run("INSERT INTO user VALUES ('admin', 'admin123', 'App Administrator')");
-  db.run("INSERT INTO user VALUES ('Roger', 'cabac', 'Normal user')");
+  db.run("INSERT INTO user VALUES ('roger', 'cabac', 'Normal user')");
  });
 
 server.get('/', function(req, res) {
