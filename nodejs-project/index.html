@@ -5,6 +5,13 @@
 </head>
 
 <body>
+<script>
+    const socket = new WebSocket("ws://localhost:8080");
+
+    socket.onmessage = event => {
+        document.getElementById("myConsole").textContent = event.data;
+    };
+</script>
 <div class="container">
     <center>
     <!--     <figure>
@@ -31,9 +38,9 @@
         }
     </script>
 </form>
- <div id="console">
+<div id="myConsole">
 
- </div>
+</div>
 
 </div>
 </body>
