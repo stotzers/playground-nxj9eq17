@@ -21,6 +21,11 @@ server.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+function logMessage(message) {
+            const consoleDiv = document.getElementById("console");
+            consoleDiv.innerHTML += message + "\n";
+        }
+
 server.post('/login', function (req, res) {
   var username = req.body.username;
   var password = req.body.password;
@@ -29,7 +34,8 @@ server.post('/login', function (req, res) {
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
-
+  logMessage("[INFO] Requête à la base de données: " + query);
+  
   db.get(query, function(err, row) {
 
     if(err) {
@@ -50,7 +56,7 @@ server.post('/login', function (req, res) {
   });
 
 });
-
+logMessage("[INFO] Le serveur démarre....");
 console.log("Le serveur démarre....");
 server.listen(8080);
 console.log('TECHIO> open -p 8080 /');
