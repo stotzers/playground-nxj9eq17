@@ -58,9 +58,18 @@ console.log('log: array', ['array_value1', 'array_value2',
 'array_value3', 'array_value4', 'array_value5']); 
 console.log('log: set', new Set([3, 1, 2, 5, 4]));
 
+const fs = require('fs');
+
+const out = fs.createWriteStream('./stdout.log');
+const err = fs.createWriteStream('./stderr.log');
+
+const myobject = new console.Console(out, err);
+
+// It will display 'This is the first example' to out
+myobject.log('This is the first example');
 
 console.log("Le serveur démarre....");
 server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
-console.log('TECHIO> open -p 8080 /');
+//console.log('TECHIO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
