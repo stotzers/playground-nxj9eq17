@@ -33,19 +33,22 @@ server.post('/login', function (req, res) {
   db.get(query, function(err, row) {
     if(err) {
       console.log('ERREUR', err);
-      res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+      res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
+	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
      // res.redirect("/index.html#error");
     } else if (!row) {
       //server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
       res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
-	      +'<br /><br />Requête à la base de données: ' + query);
+	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
       //res.redirect("/index.html#unauthorized");
     } else {
       if (row.role=='System Administrator') {
-        res.send('Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+        res.send('Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
+	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
       }
       else {
-        res.send('Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+        res.send('Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
+	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
       }
     }
   });
