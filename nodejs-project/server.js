@@ -26,7 +26,6 @@ server.post('/login', function (req, res) {
   var password = req.body.password;
   var query = "SELECT username, role FROM user where username = '" + username + "' and password = '" + password + "'";
 
-  console.clear()
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
