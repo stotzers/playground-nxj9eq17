@@ -2,9 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var sqlite3 = require('sqlite3').verbose();
 
-const fs = require('fs');
-const cheerio = require('cheerio');
-
 var server = express();
 server.use(express.static('.'));
 server.use(bodyParser.urlencoded({extended: true}));
@@ -54,6 +51,19 @@ server.post('/login', function (req, res) {
     }
   });
 });
+const x = 1;
+const y = 2;
+const z = 3;
+console.count(
+  'The value of x is ' + x + ' and has been checked .. how many times?'
+);
+console.count(
+  'The value of x is ' + x + ' and has been checked .. how many times?'
+);
+console.count(
+  'The value of y is ' + y + ' and has been checked .. how many times?'
+);
+
 console.log("Le serveur démarre....");
 server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
 console.log('TECHIO> open -p 8080 /');
