@@ -36,8 +36,7 @@ server.post('/login', function (req, res) {
   WSserver.on('connection', socket => {socket.send("Modifie le texte !");});
 });
 
-  db.get(query, function(err, row) {
-
+db.get(query, function(err, row) {
     if(err) {
       console.log('ERREUR', err);
       res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
@@ -54,8 +53,6 @@ server.post('/login', function (req, res) {
       }
     }
   });
-
-});
 
 console.log("Le serveur démarre....");
 server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
