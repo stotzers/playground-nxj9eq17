@@ -51,7 +51,7 @@ server.post('/login', function (req, res) {
   });
 
 });
-logMessage("[INFO] Le serveur démarre....");
+
 console.log("Le serveur démarre....");
 server.listen(8080);
 console.log('TECHIO> open -p 8080 /');
