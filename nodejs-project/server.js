@@ -58,20 +58,28 @@ console.log('log: array', ['array_value1', 'array_value2',
 'array_value3', 'array_value4', 'array_value5']); 
 console.log('log: set', new Set([3, 1, 2, 5, 4]));
 
-const fs = require('fs');
-
-const out = fs.createWriteStream('./stdout.log');
-const err = fs.createWriteStream('./stderr.log');
-
-const myobject = new console.Console(out, err);
-
-// It will display 'This is the first example' to out
-myobject.log('This is the first example');
-
 console.log("Le serveur démarre....");
 server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
+
+
+const http = require('http');
 const open = require('open');
-open('http://localhost:8080'); // Ouvre le navigateur à l'adresse spécifiée
+
+// Créer un serveur HTTP simple
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World!\n');
+});
+
+console.log("Le serveur démarre....");
+
+// Démarrer le serveur et écouter sur le port 8080
+server.listen(8080, () => {
+  console.log("Serveur démarré sur http://localhost:8080");
+  open('http://localhost:8080'); // Ouvre le navigateur à l'adresse spécifiée
+  console.log("Le serveur a démarré");
+});
 
 
 
