@@ -1,4 +1,3 @@
-// {
 var express = require('express');
 var bodyParser = require('body-parser');
 var sqlite3 = require('sqlite3').verbose();
@@ -16,7 +15,6 @@ db.serialize(function() {
   db.run("INSERT INTO user VALUES ('admin', 'admin123', 'App Administrator')");
   db.run("INSERT INTO user VALUES ('Roger', 'bac', 'Normal user')");
  });
-// }
 
 server.get('/', function(req, res) {
   console.log("/ is called on server");
@@ -56,7 +54,7 @@ server.post('/login', function (req, res) {
 });
 
 console.log("Le serveur démarre....");
-//server.listen(8080);
+server.listen(8080);
 //console.log('TECHIO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
