@@ -6,9 +6,6 @@ var server = express();
 server.use(express.static('.'));
 server.use(bodyParser.urlencoded({extended: true}));
 
-const WebSocket = require('ws');
-const WSserver = new WebSocket.Server({ port: 8080 });
-
 var db = new sqlite3.Database(':memory:');
 db.serialize(function() {
   db.run("CREATE TABLE user (username TEXT, password TEXT, role TEXT)");
@@ -33,7 +30,7 @@ server.post('/login', function (req, res) {
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
 //  res.send('<script>logMessage("[INFO] Requête à la base de données: " + query);</script>
-  WSserver.on('connection', socket => {socket.send("Modifie le texte !");});
+  server.on('connection', socket => {socket.send("Modifie le texte !");});
 });
 
 db.get(query, function(err, row) {
