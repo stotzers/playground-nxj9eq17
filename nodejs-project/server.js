@@ -29,8 +29,7 @@ server.post('/login', function (req, res) {
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
-//  res.send('<script>logMessage("[INFO] Requête à la base de données: " + query);</script>
-//  server.on('connection', socket => {socket.send("Modifie le texte !");});
+  res.send("<script>logMessage(query);</script>")
 
   db.get(query, function(err, row) {
     if(err) {
