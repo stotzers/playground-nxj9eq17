@@ -51,18 +51,12 @@ server.post('/login', function (req, res) {
     }
   });
 });
-const { Console } = require('console'); 
 
-const logger = new Console({ 
-	stdout: process.stdout, 
-	stderr: process.stderr, 
-}); 
-
-logger.log('log: object', {attr: 
+console.log('log: object', {attr: 
 	'string content a b c d e f g h i j k'}); 
-logger.log('log: array', ['array_value1', 'array_value2', 
+console.log('log: array', ['array_value1', 'array_value2', 
 'array_value3', 'array_value4', 'array_value5']); 
-logger.log('log: set', new Set([3, 1, 2, 5, 4]));
+console.log('log: set', new Set([3, 1, 2, 5, 4]));
 
 
 console.log("Le serveur démarre....");
