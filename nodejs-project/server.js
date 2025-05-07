@@ -30,7 +30,13 @@ server.post('/login', function (req, res) {
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
 //  res.send('<script>logMessage("[INFO] Requête à la base de données: " + query);</script>
-   res.send('Query: '+query);
+   res.send('<script>
+            function sayHello() {
+                alert("Hello depuis le serveur Node.js !");
+            }
+            sayHello();
+        </script>  ');
+});
   db.get(query, function(err, row) {
 
     if(err) {
@@ -53,7 +59,7 @@ server.post('/login', function (req, res) {
 });
 
 console.log("Le serveur démarre....");
-server.listen(8080);
+server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
 console.log('TECHIO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
