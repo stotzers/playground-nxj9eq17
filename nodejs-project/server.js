@@ -61,6 +61,7 @@ console.log('log: set', new Set([3, 1, 2, 5, 4]));
 
 console.log("Le serveur démarre....");
 
+server.listen(8080);
 console.log('TECH.IO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
