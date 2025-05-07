@@ -9,11 +9,11 @@ server.use(bodyParser.urlencoded({extended: true}));
 var db = new sqlite3.Database(':memory:');
 db.serialize(function() {
   db.run("CREATE TABLE user (username TEXT, password TEXT, role TEXT)");
-  db.run("INSERT INTO user VALUES ('abel', 'MySecretP@ssWord', 'Normal user')");
-  db.run("INSERT INTO user VALUES ('bruno', 'cool58', 'Normal user')");
-  db.run("INSERT INTO user VALUES ('sophie', 'test123', 'Normal user')");
-  db.run("INSERT INTO user VALUES ('admin', 'admin123', 'App Administrator')");
-  db.run("INSERT INTO user VALUES ('roger', 'cabac', 'Normal user')");
+  db.run("INSERT INTO user VALUES ('abel', 'MySecretP@ssWord', 'Standard  user')");
+  db.run("INSERT INTO user VALUES ('bruno', 'cool58', 'Standard  user')");
+  db.run("INSERT INTO user VALUES ('sophie', 'test123', 'Standard  user')");
+  db.run("INSERT INTO user VALUES ('admin', 'admin123', 'System Administrator')");
+  db.run("INSERT INTO user VALUES ('roger', 'cabac', 'Standard  user')");
  });
 
 server.get('/', function(req, res) {
