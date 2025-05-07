@@ -62,27 +62,6 @@ console.log("Le serveur démarre....");
 server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
 
 
-const http = require('http');
-const open = require('open');
-
-// Créer un serveur HTTP simple
-const HTTPserver = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
-});
-
-console.log("Le serveur démarre....");
-
-// Démarrer le serveur et écouter sur le port 8080
-HTTPserver.listen(8080, () => {
-  console.log("Serveur démarré sur http://localhost:8080");
-  open('http://localhost:8080'); // Ouvre le navigateur à l'adresse spécifiée
-  console.log("Le serveur a démarré");
-});
-
-
-
 //console.log('TECHIO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
