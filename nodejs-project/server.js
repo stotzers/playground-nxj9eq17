@@ -30,7 +30,7 @@ server.post('/login', function (req, res) {
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
 //  res.send('<script>logMessage("[INFO] Requête à la base de données: " + query);</script>
-  server.on('connection', socket => {socket.send("Modifie le texte !");});
+//  server.on('connection', socket => {socket.send("Modifie le texte !");});
 
   db.get(query, function(err, row) {
     if(err) {
@@ -38,8 +38,8 @@ server.post('/login', function (req, res) {
       res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
      // res.redirect("/index.html#error");
     } else if (!row) {
-      server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
-      //res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+      //server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
+      res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
       //res.redirect("/index.html#unauthorized");
     } else {
       if (row.role=='System Administrator') {
