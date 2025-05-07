@@ -1,4 +1,4 @@
-ar express = require('express');
+var express = require('express');
 var bodyParser = require('body-parser');
 var sqlite3 = require('sqlite3').verbose();
 
