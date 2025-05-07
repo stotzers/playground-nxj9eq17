@@ -51,18 +51,19 @@ server.post('/login', function (req, res) {
     }
   });
 });
-const x = 1;
-const y = 2;
-const z = 3;
-console.count(
-  'The value of x is ' + x + ' and has been checked .. how many times?'
-);
-console.count(
-  'The value of x is ' + x + ' and has been checked .. how many times?'
-);
-console.count(
-  'The value of y is ' + y + ' and has been checked .. how many times?'
-);
+const { Console } = require('console'); 
+
+const logger = new Console({ 
+	stdout: process.stdout, 
+	stderr: process.stderr, 
+}); 
+
+logger.log('log: object', {attr: 
+	'string content a b c d e f g h i j k'}); 
+logger.log('log: array', ['array_value1', 'array_value2', 
+'array_value3', 'array_value4', 'array_value5']); 
+logger.log('log: set', new Set([3, 1, 2, 5, 4]));
+
 
 console.log("Le serveur démarre....");
 server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
