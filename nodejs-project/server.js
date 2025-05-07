@@ -28,6 +28,7 @@ server.post('/login', function (req, res) {
   var password = req.body.password;
   var query = "SELECT username, role FROM user where username = '" + username + "' and password = '" + password + "'";
 
+  console.clear();
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
@@ -37,9 +38,11 @@ server.post('/login', function (req, res) {
     if(err) {
       console.log('ERREUR', err);
       res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+      console.trace();
      // res.redirect("/index.html#error");
     } else if (!row) {
-     res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+      res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+      console.trace();
       //res.redirect("/index.html#unauthorized");
     } else {
       if (row.role=='App Administrator') {
