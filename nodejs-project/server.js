@@ -13,7 +13,7 @@ db.serialize(function() {
   db.run("INSERT INTO user VALUES ('Bruno', 'cool58', 'Normal user')");
   db.run("INSERT INTO user VALUES ('Sophie', 'test123', 'Normal user')");
   db.run("INSERT INTO user VALUES ('admin', 'admin123', 'App Administrator')");
-  db.run("INSERT INTO user VALUES ('Roger', 'bac', 'Normal user')");
+  db.run("INSERT INTO user VALUES ('Roger', 'cabac', 'Normal user')");
  });
 
 server.get('/', function(req, res) {
