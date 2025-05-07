@@ -55,6 +55,6 @@ server.post('/login', function (req, res) {
 
 console.log("Le serveur démarre....");
 server.listen(8080);
-//console.log('TECHIO> open -p 8080 /');
+console.log('TECHIO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
