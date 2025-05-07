@@ -21,11 +21,6 @@ server.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-function logMessage(message) {
-            const consoleDiv = document.getElementById("console");
-            consoleDiv.innerHTML += message + "\n";
-        }
-
 server.post('/login', function (req, res) {
   var username = req.body.username;
   var password = req.body.password;
