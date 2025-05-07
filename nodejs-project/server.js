@@ -29,8 +29,8 @@ server.post('/login', function (req, res) {
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
-  res.send('<script>logMessage("[INFO] Requête à la base de données: " + query);</script>
-  
+//  res.send('<script>logMessage("[INFO] Requête à la base de données: " + query);</script>
+   res.send('document.getElementById("console").innerHTML += "hello" + \n');
   db.get(query, function(err, row) {
 
     if(err) {
@@ -41,7 +41,7 @@ server.post('/login', function (req, res) {
       res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
       //res.redirect("/index.html#unauthorized");
     } else {
-      if (row.role=='App Administrator') {
+      if (row.role=='System Administrator') {
         res.send('Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
       }
       else {
