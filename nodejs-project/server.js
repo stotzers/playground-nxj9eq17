@@ -70,6 +70,10 @@ myobject.log('This is the first example');
 
 console.log("Le serveur démarre....");
 server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
-console.log('TECHIO> open -p 8080 /');
+open('http://localhost:8080'); // Ouvre le navigateur à l'adresse spécifiée
+
+const open = require('open');
+
+//console.log('TECHIO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
