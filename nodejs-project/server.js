@@ -26,6 +26,7 @@ server.post('/login', function (req, res) {
   var password = req.body.password;
   var query = "SELECT username, role FROM user where username = '" + username + "' and password = '" + password + "'";
 
+  console.clear()
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
   console.log('Requête à la base de données: ' + query);
@@ -59,9 +60,7 @@ console.log('log: array', ['array_value1', 'array_value2',
 console.log('log: set', new Set([3, 1, 2, 5, 4]));
 
 console.log("Le serveur démarre....");
-server.listen(8080, () => console.log("Serveur démarré sur http://localhost:8080"));
 
-
-//console.log('TECHIO> open -p 8080 /');
+console.log('TECH.IO> open -p 8080 /');
 console.log("Le serveur a démarré");
 
