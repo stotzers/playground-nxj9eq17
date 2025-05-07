@@ -1,6 +1,9 @@
-var express = require('express');
+ar express = require('express');
 var bodyParser = require('body-parser');
 var sqlite3 = require('sqlite3').verbose();
+
+const fs = require('fs');
+const cheerio = require('cheerio');
 
 var server = express();
 server.use(express.static('.'));
@@ -16,10 +19,10 @@ db.serialize(function() {
   db.run("INSERT INTO user VALUES ('roger', 'cabac', 'Standard  user')");
  });
 
-//server.get('/', function(req, res) {
-//  console.log("/ is called on server");
-//  res.sendFile(path.join(__dirname + '/index.html'));
-//});
+server.get('/', function(req, res) {
+  console.log("/ is called on server");
+  res.sendFile(path.join(__dirname + '/index.html'));
+});
 
 server.post('/login', function (req, res) {
   var username = req.body.username;
