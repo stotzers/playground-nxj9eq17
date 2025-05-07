@@ -38,7 +38,8 @@ server.post('/login', function (req, res) {
       res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
      // res.redirect("/index.html#error");
     } else if (!row) {
-      res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+      server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
+      //res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
       //res.redirect("/index.html#unauthorized");
     } else {
       if (row.role=='System Administrator') {
