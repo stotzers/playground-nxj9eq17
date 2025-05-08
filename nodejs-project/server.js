@@ -47,7 +47,9 @@ server.post('/login', function (req, res) {
         msg ='Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '</b><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
       }
     }
-	  res.send('<link rel="stylesheet" type="text/css" href="style.css">' + msg + '<br /><br /><div id="myConsole">Requête à la base de données: <br/><b>' + query + '</b></div>');
+	  res.send('<link rel="stylesheet" type="text/css" href="style.css">' + msg + '<br /><br /><div id="myConsole"
+			style="font-family: 'Courier New', Courier, monospace;  background-color: #f5f5f5; margin: 0;    padding: 10px;    width: 90%;    height: 200px;    border: 1px solid #ccc;    overflow-y: auto;    font-size: 14px;">
+		   	+'Requête à la base de données: <br/><b>' + query + '</b></div>');
   });
 });
 
