@@ -5,13 +5,6 @@
 </head>
 
 <body>
-<script>
-    const socket = new WebSocket("ws://localhost:8080");
-
-    socket.onmessage = event => {
-        document.getElementById("myConsole").textContent = event.data;
-    };
-</script>
 <div class="container">
     <center>
     <!--     <figure>
@@ -31,17 +24,7 @@
         <button type="submit">Login</button>
     </div>
 
-    <script>
-        function logMessage(message) {
-            const consoleDiv = document.getElementById("console");
-            consoleDiv.innerHTML += message + "\n";
-        }
-    </script>
 </form>
-<div id="myConsole">
-
-</div>
-
 </div>
 </body>
 </html>
