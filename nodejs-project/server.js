@@ -33,10 +33,10 @@ server.post('/login', function (req, res) {
   db.get(query, function(err, row) {
     if(err) {
       console.log('ERREUR', err);
-        msg = 'ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
+        msg = 'ERREUR';
     } else if (!row) {
       //server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
-        msg = 'Accès non autorisé');
+        msg = 'Accès non autorisé';
     } else {
       if (row.role=='System Administrator') {
         msg = 'Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
