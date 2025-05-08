@@ -33,22 +33,21 @@ server.post('/login', function (req, res) {
   db.get(query, function(err, row) {
     if(err) {
       console.log('ERREUR', err);
-      res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
-	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>');
+        msg = 'ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>');
     } else if (!row) {
       //server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
-      res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
-	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>');
+        msg = 'Accès non autorisé');
     } else {
       if (row.role=='System Administrator') {
-       msg='Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
+        msg = 'Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
       }
       else {
-        msg ='Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '</b><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
+        msg = 'Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '</b><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
       }
     }
 	  res.send('<link rel="stylesheet" type="text/css" href="style.css">' + msg 
-		   	+'<br /><br /><div id="myConsole" style="font-family: Courier, monospace;  background-color: #f5f5f5; margin: 0;    padding: 10px;    width: 90%;    height: 200px;    border: 1px solid #ccc;    overflow-y: auto;    font-size: 14px;">
+		   	+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a> <br /><br />'
+		        +'<div id="myConsole" style="font-family: Courier, monospace;  background-color: #f5f5f5; margin: 0;    padding: 10px;    width: 90%;    height: 200px;    border: 1px solid #ccc;    overflow-y: auto;    font-size: 14px;">'
 		   	+'Requête à la base de données: <br/><b>' + query + '</b></div>');
   });
 });
