@@ -9,7 +9,7 @@ Cette page contient une simulation de page d'accès à une application web qui a
 ## Exercices
 Pressez sur RUN ci-dessous afin d'afficher l'écran de connexion. 
 
-Le cadre "Standard Output" en-dessous contient le log du système qui pourrait vous être utile
+Utilisez les différentes techniques d'injection de code SQL pour atteindre les objectifs suivants:
 1)	Essayer de déterminer un nom d’utilisateur de cette base de données.
 2)	Déterminer un utilisateur qui soit un administrateur du système, c’est-à-dire qui ait tous les droits sur la base de données.
 
