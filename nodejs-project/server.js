@@ -46,7 +46,7 @@ server.post('/login', function (req, res) {
     }
     res.send(msg + '<br /><br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a> <br /><br />'
 //		+'<div id="myConsole" style="font-family:Courier,monospace;background-color: #ffffff;margin:10px;padding: 10px;width: 95%;height: 100px;border: 2px solid #ccc;overflow-y:auto;font-size: 18px;">'
-		+'<link rel="stylesheet" type="text/css" href="styles.css"><div class="container">'
+		+'<link rel="stylesheet" type="text/css" href="style.css"><div class="container">'
 		+'Votre requête à la base de données: <br/><b>' + query + '</b></div>');
   });
 });
