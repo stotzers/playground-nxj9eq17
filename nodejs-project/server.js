@@ -44,9 +44,9 @@ server.post('/login', function (req, res) {
         msg = 'Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '</b>';
       }
     }
-	  res.send(msg 	+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a> <br /><br />'
-		        +'<div id="myConsole" style="font-family:Courier,monospace;background-color: #ffffff;margin:10px;padding: 10px;width: 90%;height: 200px;border: 2px solid #ccc;overflow-y:auto;font-size: 18px;">'
-		   	+'Requête à la base de données: <br/><b>' + query + '</b></div>');
+    res.send(msg + '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a> <br /><br /><br /><br />'
+		+'<div id="myConsole" style="font-family:Courier,monospace;background-color: #ffffff;margin:10px;padding: 10px;width: 100%;height: 200px;border: 2px solid #ccc;overflow-y:auto;font-size: 18px;">'
+		+'Votre requête à la base de données: <br/><b>' + query + '</b></div>');
   });
 });
 
