@@ -24,7 +24,7 @@ server.get('/', function(req, res) {
 server.post('/login', function (req, res) {
   var username = req.body.username;
   var password = req.body.password;
-  var query = "SELECT username, role FROM user "+ CHAR (10)+" where username = '" + username + "' and password = '" + password + "'";
+  var query = "SELECT username, role FROM user where username = '" + username + "' and password = '" + password + "'";
 
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
@@ -35,7 +35,6 @@ server.post('/login', function (req, res) {
       console.log('ERREUR', err);
         msg = 'ERREUR';
     } else if (!row) {
-      //server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
         msg = 'Accès non autorisé';
     } else {
       if (row.role=='System Administrator') {
