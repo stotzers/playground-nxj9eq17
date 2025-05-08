@@ -19,7 +19,9 @@ Utilisez les différentes techniques d'injection de code SQL pour atteindre les 
 
     Indice: sachez que ce mot de passe contient moins de 7 caractères, choisis parmi les 3 premières lettres de l’alphabet écrites en minuscule : a, b et c.
     
-5)  Déterminer le nombre d’utilisateurs qu’il y a dans cette base de données ?
+5)	Déterminer le nombre d’utilisateurs qu’il y a dans cette base de données
+6)	Déterminer tous les mots de passe de tous les utilisateurs
+
 ## Source
 Cette page est fortment inspirée du playground suivant: https://tech.io/playgrounds/154/sql-injection-demo/sql-injection
 
