@@ -15,7 +15,7 @@ Utilisez les différentes techniques d'injection de code SQL pour atteindre les 
 
     Indice: Les administrateurs ont habituellement un nom du type ‘administrateur’, ‘Administrateur’, ‘administrator’, ‘admin’, ‘Superuser’, ‘superuser’,…
 3)	Connectez-vous au système en tant qu’administrateur.
-4)	Déterminer le mot de passe de l’utilisateur dont le login est ‘Roger’ avec la méthode par tâtonnement avec LIKE.
+4)	Déterminer le mot de passe de l’utilisateur dont le login est ‘roger’ avec la méthode par tâtonnement avec LIKE.
 
     Indice: sachez que ce mot de passe contient moins de 7 caractères, choisis parmi les 3 premières lettres de l’alphabet écrites en minuscule : a, b et c.
     
