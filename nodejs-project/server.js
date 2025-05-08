@@ -24,7 +24,7 @@ server.get('/', function(req, res) {
 server.post('/login', function (req, res) {
   var username = req.body.username;
   var password = req.body.password;
-  var query = "SELECT username, role FROM user where username = '" + username + "' and password = '" + password + "'";
+  var query = "SELECT username, role FROM user & CHAR (10) & where username = '" + username + "' & CHAR (10) & CHAR (9) & and password = '" + password + "'";
 
   console.log("Login: " + username);
   console.log("Mot de passe: " + password);
