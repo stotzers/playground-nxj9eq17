@@ -47,7 +47,7 @@ server.post('/login', function (req, res) {
         msg ='Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
       }
     }
-	  res.send(msg + '<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>');
+	  res.send('<link rel="stylesheet" type="text/css" href="style.css">' + msg + '<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>');
   });
 });
 
