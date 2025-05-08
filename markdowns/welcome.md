@@ -13,7 +13,7 @@ Utilisez les différentes techniques d'injection de code SQL pour atteindre les 
 1)	Essayer de déterminer un nom d’utilisateur de cette base de données.
 2)	Déterminer un utilisateur qui soit un administrateur du système, c’est-à-dire qui ait tous les droits sur la base de données.
 
-    Indice: Les administrateurs ont habituellement un nom du type ‘administrateur’, ‘administrator’, ‘admin’, ‘superuser’,…
+    Indice: Les administrateurs ont habituellement un nom du type ‘administrateur’, ‘Administrateur’, ‘administrator’, ‘admin’, ‘Superuser’, ‘superuser’,…
 3)	Connectez-vous au système en tant qu’administrateur.
 4)	Déterminer le mot de passe de l’utilisateur dont le login est ‘Roger’ avec la méthode par tâtonnement avec LIKE.
 
