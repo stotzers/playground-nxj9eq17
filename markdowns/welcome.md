@@ -23,7 +23,7 @@ Utilisez les différentes techniques d'injection de code SQL pour atteindre les 
 6)	Déterminer tous les mots de passe de tous les utilisateurs
 
 ## Source
-Cette page est fortment inspirée du playground suivant: https://tech.io/playgrounds/154/sql-injection-demo/sql-injection
+Cette page a été inspirée du playground suivant: https://tech.io/playgrounds/154/sql-injection-demo/sql-injection
 
 # Appuyer sur RUN pour afficher l'écran de connexion
 
