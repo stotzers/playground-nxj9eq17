@@ -19,7 +19,7 @@ Le cadre "Standard Output" en-dessous contient le log du système qui pourrait v
 
     Indice: sachez que ce mot de passe contient moins de 7 caractères, choisis parmi les 3 premières lettres de l’alphabet écrites en minuscule : a, b et c.
     
-5)  Pouvez-vous déterminer le nombre d’utilisateurs qu’il y a dans ce système ?
+5)  Pouvez-vous déterminer le nombre d’utilisateurs qu’il y a dans cette base de données ?
 ## Source
 Cette page est fortment inspirée du playground suivant: https://tech.io/playgrounds/154/sql-injection-demo/sql-injection
 
