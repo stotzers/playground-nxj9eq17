@@ -34,34 +34,24 @@ server.post('/login', function (req, res) {
     if(err) {
       console.log('ERREUR', err);
       res.send('ERREUR'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
-	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
-     // res.redirect("/index.html#error");
+	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>');
     } else if (!row) {
       //server.on('connection', socket => {socket.send("petit problème d'authentification... <br> voilà...");});
       res.send('Accès non autorisé'+ '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
-	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
-      //res.redirect("/index.html#unauthorized");
+	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>');
     } else {
       if (row.role=='System Administrator') {
-        res.send('Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
-	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
+       msg='Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br />Vous avez les pleins pouvoirs sur cette base de données !!!<br /><br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
       }
       else {
-        res.send('Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>'
-	      +'<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>);
+        msg ='Bonjour <b>' + row.username + ',</b><br /> Vous êtes connecté en tant que <b>' + row.role + '<br /><br /><br /><a href="/index.html">Déconnexion et retour à la page d\'accueil</a>';
       }
     }
+	  res.send(msg + '<div id="myConsole"><br /><br /><br /><br />Requête à la base de données: ' + query + '</div>');
   });
 });
 
-console.log('log: object', {attr: 
-	'string content a b c d e f g h i j k'}); 
-console.log('log: array', ['array_value1', 'array_value2', 
-'array_value3', 'array_value4', 'array_value5']); 
-console.log('log: set', new Set([3, 1, 2, 5, 4]));
-
 console.log("Le serveur démarre....");
-
 server.listen(8080);
 console.log('TECHIO> open -p 8080 /');
 console.log("Le serveur a démarré");
