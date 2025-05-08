@@ -25,5 +25,5 @@ Cette page est fortment inspirée du playground suivant: https://tech.io/playgro
 
 # Appuyer sur RUN pour afficher l'écran de connexion
 
-@[Executer l'applicaton]({ "command": "node server.js" })
+@[Executer l'application]({ "command": "node server.js" })
 
